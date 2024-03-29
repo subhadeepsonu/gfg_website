@@ -44,28 +44,28 @@ export async function PUT(req:NextRequest){
         })
     }
 }
-export async function UPDATE(req:NextRequest){
-    try{
-        const body = await req.json()
-        const resp = await prisma.user.update({
-            where:{
-                email:body.email
-            },
-            data:{
-                name:body.name,
-                password:body.password,
-                imgurl:body.imgurl
+// export async function UPDATE(req:NextRequest){
+//     try{
+//         const body = await req.json()
+//         const resp = await prisma.user.update({
+//             where:{
+//                 email:body.email
+//             },
+//             data:{
+//                 name:body.name,
+//                 password:body.password,
+//                 imgurl:body.imgurl
 
-            }
+//             }
         
-        })
-        return Response.json({
-            resp
-        })
-    }catch{
-        return Response.json({
-            "msg":"error",
-            "status":404
-        })
-    }
-}
+//         })
+//         return Response.json({
+//             resp
+//         })
+//     }catch{
+//         return Response.json({
+//             "msg":"error",
+//             "status":404
+//         })
+//     }
+// }

@@ -38,7 +38,7 @@ export async function POST(req:NextRequest){
         })
     }
 }
-export async function UPDATE(req:NextRequest){
+export async function PUT(req:NextRequest){
     try{
         const body = await req.json()
         const resp = await prisma.events.updateMany({
