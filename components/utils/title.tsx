@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Title(props:{
   name:String
 }){
-    return <motion.div className="text-3xl font-semibold"     initial={{
+    return <motion.div className="text-3xl font-semibold text-white"     initial={{
         x:10,opacity:0
       }}
       animate={{

@@ -1,7 +1,6 @@
 "use client"
 import EventCard from "@/components/eventCard"
 import { Button } from "@/components/ui/button"
-import Title from "@/components/utils/title"
 import { useRouter } from "next/navigation"
 export default async function(){
     const router = useRouter()

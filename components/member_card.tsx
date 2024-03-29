@@ -12,7 +12,7 @@ export default function MemberCard(props:{
 }){
     return <motion.div  className="bg-black  border-gray-800 border-2 h-96 w-64 flex justify-between flex-col items-center rounded-lg  cursor-pointer m-2 hover:scale-105 duration-100 "
     initial={{
-        y:10,opacity:0
+        y:0,opacity:0
     }}
     animate={{
         y:0,opacity:1

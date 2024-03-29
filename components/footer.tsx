@@ -1,7 +1,7 @@
 import {  InstagramIcon,YoutubeIcon,LinkedinIcon,GithubIcon} from "lucide-react";
 
 export default function  Footer(){
-    return <div className="bg-black h-32 flex justify-around items-center text-white">
+    return <div className="bg-black min-h-32 flex justify-around items-center text-white border-t-2 border-gray-900">
             <div className="w-1/2 border-r-2 border-gray-300 flex justify-center items-center font-light text-center text-md">
             Geeks for geeks VIT-AP, the student chapter from VIT-AP is
 a team of young and enthusiastic engineers dedicated with an unparalleled commitment .

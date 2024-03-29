@@ -1,39 +1,33 @@
-"use client"
-import { motion } from "framer-motion";
+"use client";
+import React from "react";
+import { SparklesCore } from "../ui/sparkles";
 
+export default function SparklesPreview() {
+  return (
+    <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20 pb-5">
+        Geeks For Geeks
+      </h1>
+      <div className="w-[40rem] h-40 relative">
+        {/* Gradients */}
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
-export default  function Hero(){
-    return <div className="bg-black  h-[500px] flex justify-center items-center text-white mb-10" 
-    
-    >
-        <motion.div className="grid grid-cols-1 lg:grid-cols-2" 
-        initial={{
-            y:10,opacity:0
-        }}
-        animate={{
-            y:0,opacity:1
-        }}
-        transition={{
-            duration:0.4
-        }}
-        >
-        <div className="flex justify-center items-start flex-col w-[500px]  ">
-        <div className="font-bold text-5xl text-center">
-            GEEKS FOR GEEKS
-        </div>
-        <div className="font-semibold text-3xl py-10 text-center">
-            VITAP STUDENT CHAPTER
-        </div>
-        <div className="text-green-600 font-light text-xl ">
-        Geeks for geeks Vit-ap, the student chapter from VIT-AP is a team of young and enthusiastic engineers dedicated with an unparalleled commitment to
-student's satisfaction. This platform has been created for every geek wishing to expand their knowledge.
-        </div>
-        </div>
-        <div className="flex justify-center items-center">
-            <img className="h-96" src="https://media.licdn.com/dms/image/D5622AQG_m-Z1AVn8qA/feedshare-shrink_2048_1536/0/1701702067342?e=2147483647&v=beta&t=fHLO2LWw8y5HojoCwS_r9iNcyWJIPU4YIVSnkbYoRds">
-                
-            </img>
-        </div>
-    </motion.div>
+        {/* Core component */}
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+
+        {/* Radial Gradient to prevent sharp edges */}
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      </div>
     </div>
+  );
 }

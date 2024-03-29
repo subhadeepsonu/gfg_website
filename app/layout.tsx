@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Coustard ,Red_Rose,Calistoga,Roboto} from "next/font/google"
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-
+const coustard = Roboto({
+  weight: ['400'],
+  style: ['normal',],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="">
-      <body className={inter.className}>
+      <body className={coustard.className}>
         <Navbar></Navbar>
         {children}</body>
         <Footer></Footer>

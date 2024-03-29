@@ -1,3 +1,8 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -18,12 +23,14 @@ const config = {
       },
     },
     extend: {
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        achyut:"#ffaec9",
       
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -77,7 +84,20 @@ const config = {
   },
   plugins: [require("tailwindcss-animate"),
   require('tailwind-scrollbar'),
+  addVariablesForColors,
+  
 ],
 } satisfies Config
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
+
 
 export default config
